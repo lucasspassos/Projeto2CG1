@@ -1,5 +1,4 @@
 package Proj;
-
 import com.jogamp.opengl.util.Animator;
 import com.jogamp.opengl.util.gl2.GLUT;
 import java.awt.event.*;
@@ -47,10 +46,6 @@ public class ProjetoFinal implements GLEventListener,
         new ProjetoFinal();
     }
 
-    /*
- * Initialize material property, light source, lighting model, and depth
- * buffer.
-     */
     @Override
     public void init(GLAutoDrawable drawable) {
         GL2 gl = drawable.getGL().getGL2();
@@ -133,12 +128,8 @@ public class ProjetoFinal implements GLEventListener,
                         GL2.GL_SHININESS,
                         brilho
                         );
-        
-        
     //trem de pouso
     gl.glPushMatrix();
-    
-        
         gl.glPushMatrix();
             gl.glTranslated(0,0,pos2);
             gl.glColor3f(0.2f,0.2f,0.2f);
@@ -146,10 +137,9 @@ public class ProjetoFinal implements GLEventListener,
             glut.glutSolidCylinder(0.04f, 0.24f, 20, 10);
             gl.glRotated(90,1,0,0);
             gl.glRotated(90,0,1,0);
-            gl.glColor3f(0,0,0.2f);
-            gl.glTranslated(0,0.33,-0.07f);
+            gl.glColor3f(0,0,0.1f);
+            gl.glTranslated(0,0.28,-0.06f);
             glut.glutSolidCylinder(0.1f, 0.1f, 20, 10);
-            
         gl.glPopMatrix();
         
         gl.glPushMatrix();
@@ -159,7 +149,7 @@ public class ProjetoFinal implements GLEventListener,
             glut.glutSolidCylinder(0.04f, 0.24f, 20, 10);
             gl.glRotated(90,1,0,0);
             gl.glRotated(90,0,1,0);
-            gl.glColor3f(0,0,0.2f);
+            gl.glColor3f(0,0,0.1f);
             gl.glTranslated(0,0.28,-0.05f);
             glut.glutSolidCylinder(0.1f, 0.1f, 20, 10);
         gl.glPopMatrix();
@@ -171,19 +161,17 @@ public class ProjetoFinal implements GLEventListener,
             glut.glutSolidCylinder(0.04f, 0.24f, 20, 10);
             gl.glRotated(90,1,0,0);
             gl.glRotated(90,0,1,0);
-            gl.glColor3f(0,0,0.2f);
+            gl.glColor3f(0,0,0.1f);
             gl.glTranslated(0,0.28,-0.05f);
             glut.glutSolidCylinder(0.1f, 0.1f, 20, 10);
         gl.glPopMatrix();
         
     gl.glPopMatrix();
-    //final trem de pouso
-     
-        
+    //final trem de pouso       
         gl.glPushMatrix();
             //corpo aviao
             gl.glPushMatrix();
-            gl.glColor3f(0,0.4f,0);
+            gl.glColor3f(0.08f,0.209f,0.209f);        
             gl.glRotated(-90,1,0,0);
             glut.glutSolidCone(0.32f,0.7f, 20, 10);
             gl.glTranslated(0,0,-1.7f);
@@ -200,6 +188,7 @@ public class ProjetoFinal implements GLEventListener,
             gl.glPushMatrix();
             gl.glTranslated(0,-1.6,1);
             gl.glColor3f(0.30f,0.16f,0.1f);
+             gl.glColor3f(0,0.2f,0);
             gl.glBegin(GL_TRIANGLES);
             gl.glVertex3f(0, 0, -1);
             gl.glVertex3f(1.2f, 0, -1);
@@ -211,6 +200,7 @@ public class ProjetoFinal implements GLEventListener,
             gl.glTranslated(0,-1.6,1);
             gl.glRotated(90, 0, 0, 1);
             gl.glColor3f(0.30f,0.16f,0.1f);
+            gl.glColor3f(0,0.2f,0);
             gl.glBegin(GL_TRIANGLES);
             gl.glVertex3f(0, 0, -1);
             gl.glVertex3f(1.85f, 0, -1);
@@ -223,6 +213,7 @@ public class ProjetoFinal implements GLEventListener,
             gl.glTranslated(1,-1.7f,0);
             gl.glRotated(90, 0, 1, 0);
             gl.glColor3f(0.30f,0.16f,0.1f);
+            gl.glColor3f(0,0.2f,0);
             gl.glBegin(GL_TRIANGLES);
             gl.glVertex3f(0, 0, -1);
             gl.glVertex3f(0.9f, 0, -1);
@@ -230,12 +221,7 @@ public class ProjetoFinal implements GLEventListener,
             gl.glEnd();
             gl.glPopMatrix();
         gl.glPopMatrix();
-        
-        
-      
-                
-        
-        
+
     //controles
         //Trem de pouso
         if(up && pos2>= -0.30f)
@@ -273,7 +259,6 @@ public class ProjetoFinal implements GLEventListener,
                 f4=0;
             }
         }
-        
     }
     
     public void missil(GL2 gl)
@@ -288,7 +273,7 @@ public class ProjetoFinal implements GLEventListener,
                 gl.glColor3f(0.4f,0,0);
                 glut.glutSolidCone(0.06f,0.4f, 20, 10);
                 gl.glTranslated(0,0,-1);
-                gl.glColor3f(0.3f,0.3f,0.4f);
+                gl.glColor3f(0.6f,0.6f,0.6f);
                 glut.glutSolidCylinder(0.06f, 1, 20, 10);
             gl.glPopMatrix();
             
@@ -300,7 +285,7 @@ public class ProjetoFinal implements GLEventListener,
                 gl.glColor3f(0.4f,0,0);
                 glut.glutSolidCone(0.06f,0.4f, 20, 10);
                 gl.glTranslated(0,0,-0.6f);
-                gl.glColor3f(0.3f,0.3f,0.4f);
+                gl.glColor3f(0.6f,0.6f,0.6f);
                 glut.glutSolidCylinder(0.06f, 0.6f, 20, 10);
             gl.glPopMatrix();
             
@@ -312,7 +297,7 @@ public class ProjetoFinal implements GLEventListener,
                 gl.glColor3f(0.4f,0,0);
                 glut.glutSolidCone(0.06f,0.4f, 20, 10);
                 gl.glTranslated(0,0,-0.6f);
-                gl.glColor3f(0.3f,0.3f,0.4f);
+                gl.glColor3f(0.6f,0.6f,0.6f);
                 glut.glutSolidCylinder(0.06f, 0.6f, 20, 10);
             gl.glPopMatrix();
 
@@ -323,7 +308,7 @@ public class ProjetoFinal implements GLEventListener,
                 gl.glColor3f(0.4f,0,0);
                 glut.glutSolidCone(0.06f,0.4f, 20, 10);
                 gl.glTranslated(0,0,-1f);
-                gl.glColor3f(0.3f,0.3f,0.4f);
+                gl.glColor3f(0.6f,0.6f,0.6f);
                 glut.glutSolidCylinder(0.06f, 1, 20, 10);
             gl.glPopMatrix();
             
